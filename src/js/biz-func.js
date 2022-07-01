@@ -3,12 +3,12 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import BikeElement from './bikeElement.js';
+import BikeElement from './currency-service.js';
  
 function getElements(response){
   let bikeList = [];
-  for (let i = 0; i < response.bikes.length; i++){
-    bikeList.push(`<p>title: ${response.bikes[i].title}</p>`);
+  for (let i = 0; i < response.conversion_rates.length; i++){
+    bikeList.push(`<p>title: ${response.conversion_rates[i].title}</p>`);
   }
   $('#showBikes').html(bikeList);
 }

@@ -2,19 +2,19 @@
 
 export default class BikeElement {  
   static stolenBike() {
-    return fetch(`https://bikeindex.org:443/api/v3/search`)
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
       .then(response =>{
         if (!response.ok){
           throw Error("ERROR");
         }
         return response.json();
-    //  console.log(response);
-  })
-  .catch( error => {
-   console.log(error)
-  });
-}
-}
+      })
+      .catch( error => {
+        console.log(error)
+      });
+    }
+  }
+  console.log(response)
 
 
 
