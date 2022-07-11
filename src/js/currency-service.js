@@ -1,7 +1,7 @@
 
 
-export default class BikeElement {  
-  static stolenBike() {
+export default class CurrencyElement {  
+  static currencyApi() {
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
       .then(response =>{
         if (!response.ok){
