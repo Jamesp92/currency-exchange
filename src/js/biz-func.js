@@ -3,23 +3,30 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import BikeElement from './currency-service.js';
+import CurrencyElement from './currency-service.js';
+ let getRate = Currency
  
 function getElements(response){
-  let bikeList = [];
-  for (let i = 0; i < response.conversion_rates.length; i++){
-    bikeList.push(`<p>title: ${response.conversion_rates[i].title}</p>`);
-  }
-  $('#showBikes').html(bikeList);
+   if (response.ok){
+    let userCurrency = $("#usDollar")
+    let convertTo = $("#currency")
+    $('.exRate').text(parseInt(response.conversion_rates[convertTo] * userCurrency));
+   }
+   else
+   {
+    $(".showErrors").text(' please try again ')
+   }
 }
 
 async function makeApiCall(){
-  const response = await BikeElement.stolenBike();
+  const response = await CurrencyElement.currencyApi(convertTo);
   getElements(response)
 }
 
 $(document).ready(function() {
-  $('#stolen').click(function() {
-    makeApiCall();
+  $('#button').click(function() {
+ event.preventDefault();
+    makeApiCall(convertTo);
+    $(".showErrors")
   });
 });
