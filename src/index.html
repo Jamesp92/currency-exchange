@@ -1,16 +1,25 @@
 <html lang="en-US">
 <head>
-  <title>Bike Index</title>
+  <title>Currency Exchange</title>
 </head>
 <body>
   <div class="container">
-    <h1> Stolen Bikes Missing From Anywhere!</h1>
-   
+    <h1>exchange your currency</h1>
+    <label for="usDollar">Enter  Amount:</label>
+    <input id="usDollar" type="text">
+    <h3>pick exchange currency</h3>
+    <select class="form-control" id="currency">
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
 
-    <button class="btn-success" id="stolen">Click here to view all stolen bikes</button>
-    <div class="showBikes"></div>
-    <div class="showColors"></div>
-    <div class="showLocations"></div>
+    </select>
+    <button class="btn-success" id="button"> Currency exchange</button>
+    <div class="showErrors"></div>
+    <div class="exRate"></div>
+
   </div>
 </body>
 </html>
